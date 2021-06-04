@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns>
+	<Column DBField="Change Type" HeaderText="Change Type" Type="String" />
+	<Column DBField="Deal Id" HeaderText="Deal Id" Type="Integer" />
+	<Column DBField="Asset Class" HeaderText="Asset Class" Type="String" />
+	<Column DBField="Collateral Type" HeaderText="Collateral Type" Type="String" />
+	<Column DBField="Product Type" HeaderText="Product Type" Type="String" />
+	<Column DBField="Account Number" HeaderText="Account Number" Type="String" />
+	<Column DBField="Customer Name" HeaderText="Customer Name" Type="String" />
+	<Column DBField="Deal Name" HeaderText="Deal Name" Type="String" />
+	<Column DBField="Invoice Description" HeaderText="Invoice Description" Type="String" />
+	<Column DBField="Deal Notes" HeaderText="Deal Notes" Type="String" />
+	<Column DBField="Date Rated" HeaderText="Date Rated" Type="Date" />
+	<Column DBField="GRP Created" HeaderText="GRP Created" Type="Date" />
+	<Column DBField="Invoice Posting Date" HeaderText="Invoice Posting Date" Type="Date" />
+	<Column DBField="Expected Bill Date" HeaderText="Expected Bill Date" Type="Date" />
+	<Column DBField="W-ID" HeaderText="W ID" Type="String" />
+	<Column DBField="Deal Source" HeaderText="Deal Source" Type="String" />
+	<Column DBField="Service Code" HeaderText="Service Code" Type="String" />
+	<Column DBField="Billing Status" HeaderText="Billing Status" Type="String" />
+	<Column DBField="Probability" HeaderText="Probability" Type="Decimal" />
+	<Column DBField="Old Par Size" HeaderText="Old Par Size" Type="Decimal" />
+	<Column DBField="New Par Size" HeaderText="New Par Size" Type="Decimal" />
+	<Column DBField="Par Difference" HeaderText="Par Difference" Type="Decimal" />
+	<Column DBField="Old Fee" HeaderText="Old Fee" Type="Decimal" />
+	<Column DBField="New Fee" HeaderText="New Fee" Type="Decimal" />
+	<Column DBField="Fee Difference" HeaderText="Fee Difference" Type="Decimal" />
+	<Column DBField="Old Probability" HeaderText="Old Probability" Type="Decimal" />
+	<Column DBField="New Probability" HeaderText="New Probability" Type="Decimal" />
+	<Column DBField="Slipped From" HeaderText="Slipped From" Type="Date" />
+	<Column DBField="Slipped To" HeaderText="Slipped To" Type="Date" />
+	<Column DBField="User" HeaderText="User" Type="String" />
+	<Column DBField="changeDate" HeaderText="Change Date" Type="Date" />
+	<Column DBField="officeName" HeaderText="officeName" Type="String" />
+	<Column DBField="regionName" HeaderText="regionName" Type="String" />
+</Columns>

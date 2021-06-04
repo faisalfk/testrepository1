@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<div>
+    @helper ShowList(string[] args)
+    {
+        if (args.Length == 0)
+        {
+            <label>No elements in list</label>
+        }
+        else
+        {
+            <ul>
+                @foreach (string str in args)
+                {
+                    <li>@str</li>
+                }
+            </ul>
+        }
+    }
+</div>
+
+@ShowList(new string[] { "JAN", "FEB", "MAR" });
+<br />
+@ShowList(new string[] { "SAT", "SUN", "MON" });
+<br />
+@ShowList(new string[] { });
+
+@Html.ActionLink("Go To Index", "Index")
+
+<br />
+@{ 
+    string Name = "faisal";
+}
+
+@Html.TextBox("textBox1", Name, new  { id="txtName", @class="customClass", style="width:200px;"})

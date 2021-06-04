@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns>
+	<Column DBField="DealId" HeaderText="Deal Id" Type="Integer" />
+	<Column DBField="DealSource" HeaderText="Deal Source" Type="String" />
+	<Column DBField="DealApproved" HeaderText="Deal Approved" Type="String" />
+	<Column DBField="Engaged" HeaderText="Engaged" Type="String" />
+	<Column DBField="RevenueFlash" HeaderText="Revenue Flash" Type="Decimal" />
+	<Column DBField="DateCreated" HeaderText="Date Created" Type="Date" />
+	<Column DBField="DateRated" HeaderText="Date Rated" Type="Date" />
+	<Column DBField="BusinessUnit" HeaderText="Business Unit" Type="String" />
+	<Column DBField="BusinessGroup" HeaderText="Business Group" Type="String" />
+	<Column DBField="PIMS Bus Unit" HeaderText="PIMS Bus Unit" Type="String" />
+	<Column DBField="PIMS Dept" HeaderText="PIMS Department" Type="String" />
+	<Column DBField="CBM" HeaderText="CBM" Type="String" />
+	<Column DBField="Office" HeaderText="Office" Type="String" />
+	<Column DBField="Analyst" HeaderText="Analyst" Type="String" />
+	<Column DBField="OrganizationName" HeaderText="Organization Name" Type="String" />
+	<Column DBField="AccountNumber" HeaderText="Account Number" Type="String" />
+	<Column DBField="CustomerOrgId" HeaderText="Customer Org Id" Type="String" />
+	<Column DBField="CustomerOrgDesc" HeaderText="Customer Org Desc" Type="String" />
+	<Column DBField="ParticipantRole" HeaderText="Participant Role" Type="String" />
+	<Column DBField="CustomerCountry" HeaderText="Customer Country" Type="String" />
+	<Column DBField="DealSize" HeaderText="Deal Size" Type="Decimal" />
+	<Column DBField="DealSizeCurr" HeaderText="Deal Size Currency" Type="String" />
+	<Column DBField="DealName" HeaderText="Deal Name" Type="String" />
+	<Column DBField="Description" HeaderText="Description" Type="String" />
+	<Column DBField="BillingComments" HeaderText="Billing Comments" Type="String" />
+	<Column DBField="ProductType" HeaderText="Product Type" Type="String" />
+	<Column DBField="ServiceCode" HeaderText="Service Code" Type="String" />
+	<Column DBField="OrgId" HeaderText="Org ID" Type="String" />
+	<Column DBField="ProgramId" HeaderText="Program ID" Type="String" />
+	<Column DBField="InstrumentId" HeaderText="Instrument ID" Type="String" />
+	<Column DBField="SalesForceId" HeaderText="SalesForce ID" Type="String" />
+	<Column DBField="RevenueEffectiveDate" HeaderText="RevenueEffectiveDate" Type="Date" />
+	<Column DBField="SplitPct" HeaderText="Split Pct" Type="Decimal" />
+	<Column DBField="PotentialBilling" HeaderText="Potential Billing" Type="Decimal" />
+	<Column DBField="net" HeaderText="Monthly Amount" Type="Decimal" />
+	<Column DBField="currency" HeaderText="Currency" Type="String" />
+	<Column DBField="netUSD" HeaderText="Monthly Amount USD" Type="Decimal" />
+	<Column DBField="GrossAmount" HeaderText="Gross Amount" Type="Decimal" />
+	<Column DBField="GrossUSD" HeaderText="Gross Amount USD" Type="Decimal" />
+	<Column DBField="FeeSchedule" HeaderText="Fee Schedule" Type="Decimal" />
+	<Column DBField="feeScheduleUSD" HeaderText="Fee Schedule USD" Type="Decimal" />
+	<Column DBField="InvoiceNumber" HeaderText="Invoice Number" Type="String" />
+	<Column DBField="BillingDate" HeaderText="Billing Date" Type="Date" />
+	<Column DBField="BalanceSheetDate" HeaderText="Balance Sheet Date" Type="Date" />
+	<Column DBField="ContractDate" HeaderText="Contract Date" Type="Date" />
+	<Column DBField="fifExpiryDate" HeaderText="FIF Expiry Date" Type="Date" />
+	<Column DBField="RPMStatus" HeaderText="RPM Status" Type="String" />
+	<Column DBField="LastEditDate" HeaderText="Last Edit Date" Type="Date" />
+	<Column DBField="LastEditBy" HeaderText="Last Edit By" Type="String" />
+	<Column DBField="earnedPeriod" HeaderText="Earned Period" Type="String" />
+	<Column DBField="componentCreateDate" HeaderText="Component Creation Date" Type="Date" />
+	<Column DBField="DealComponentId" HeaderText="Deal Component ID" Type="Integer" />
+	<Column DBField="DealType" HeaderText="Deal Type" Type="Integer" />
+	<Column DBField="Region" HeaderText="Region" Type="Integer" />
+	<Column DBField="RegionName" HeaderText="Region Name" Type="String" />
+</Columns>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns>
+	<Column DBField="pricing_id" HeaderText="Pricing ID" Type="Integer" />
+	<Column DBField="deal_name" HeaderText="Deal Name" Type="String" />
+	<Column DBField="rpm_deal_id" HeaderText="RPM Deal ID" Type="String" />
+	<Column DBField="issuer" HeaderText="Issuer" Type="String" />
+	<Column DBField="wjob_id" HeaderText="W ID" Type="String" />
+	<Column DBField="rpm_feeid" HeaderText="FEE ID" Type="String" />
+	<Column DBField="deal_close_date" HeaderText="Deal Close Date" Type="Date" CellFormatString="MM/dd/yyyy" />
+	<Column DBField="asset_type" HeaderText="Asset Type" Type="String" />
+	<Column DBField="collateral" HeaderText="Collateral" Type="String" />
+	<Column DBField="product_type" HeaderText="Product Type" Type="String" />
+	<Column DBField="total_deal_amount" HeaderText="Total Deal Amount" Type="Decimal" />
+	<Column DBField="rated_deal_amount" HeaderText="Rated Deal Amount" Type="Decimal" />
+	<Column DBField="fee_name" HeaderText="Fee Name" Type="String" />
+	<Column DBField="applied_to_billing" HeaderText="Applied To Billing" Type="String" />
+	<Column DBField="fee_schedule_price" HeaderText="Fee Schedule Price" Type="Decimal" />
+	<Column DBField="billed_price" HeaderText="Billed Price" Type="Decimal" />
+	<Column DBField="explicit_discount" HeaderText="Explicit Discount" Type="Decimal" />
+	<Column DBField="explicit_discount_type" HeaderText="Explicit Discount Type" Type="String" />
+	<Column DBField="fee_schedule_maximum" HeaderText="Fee Schedule Maximum" Type="Decimal" CellFormatString="#,###" />
+	<Column DBField="maximum_override" HeaderText="Maximum Override" Type="Decimal" CellFormatString="#,###" />
+	<Column DBField="fee_schedule_minimum" HeaderText="Fee Schedule Minimum" Type="Decimal" CellFormatString="#,###" />
+	<Column DBField="minimum_override" HeaderText="Minimum Override" Type="Decimal" CellFormatString="#,###" />
+	<Column DBField="effective_discount_percent" HeaderText="Effective Discount(%)" Type="Percent" />
+	<Column DBField="effective_discount_value" HeaderText="Effective Discount Amount" Type="Decimal" />
+	<Column DBField="Pricing_Calulator_Link" HeaderText="Pricing Calculator Link" Type="String" />
+	<Column DBField="calculation" HeaderText="Calculation" Type="String" />s
+</Columns>

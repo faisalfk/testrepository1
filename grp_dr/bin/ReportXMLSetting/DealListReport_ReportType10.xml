@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns>
+	<Column DBField="DealId" HeaderText="Deal Id" Type="Integer" />
+	<Column DBField="BusinessUnit" HeaderText="Business Unit" Type="String" />
+	<Column DBField="BusinessGroup" HeaderText="Business Group" Type="String" />
+	<Column DBField="Office" HeaderText="Office" Type="String" />
+	<Column DBField="AccountNumber" HeaderText="Account Number" Type="String" />
+	<Column DBField="OrganizationName" HeaderText="Customer Name" Type="String" />
+	<Column DBField="CustomerOrgId" HeaderText="Customer Org Id" Type="String" />
+	<Column DBField="CustomerOrgDesc" HeaderText="Customer Org Desc" Type="String" />
+	<Column DBField="ParticipantRole" HeaderText="Participant Role" Type="String" />
+	<Column DBField="CustomerCountry" HeaderText="Customer Country" Type="String" />
+	<Column DBField="Analyst" HeaderText="Analyst" Type="String" />
+	<Column DBField="ProgramId" HeaderText="Program Id" Type="String" />
+	<Column DBField="SalesForceId" HeaderText="SalesForce Id" Type="String" />
+	<Column DBField="DealName" HeaderText="Deal Name" Type="String" />
+	<Column DBField="currency" HeaderText="Currency" Type="String" />
+	<Column DBField="GrossAmount" HeaderText="Gross Amount" Type="Decimal" />
+	<Column DBField="GrossUSD" HeaderText="Gross Amount USD" Type="Decimal" />
+	<Column DBField="FeeSchedule" HeaderText="Fee Schedule" Type="Decimal" />
+	<Column DBField="FeeScheduleUSD" HeaderText="Fee Schedule USD" Type="Decimal" />
+	<Column DBField="DiscountAmount" HeaderText="Discount Amount" Type="Decimal" />
+	<Column DBField="DiscountPercent" HeaderText="Discount Pct" Type="Decimal" />
+	<Column DBField="DiscountReason" HeaderText="Discount Reason" Type="String" />
+	<Column DBField="DiscountNotes" HeaderText="Discount Notes" Type="String" />
+	<Column DBField="DiscountApprover" HeaderText="Discount Approver" Type="String" />
+	<Column DBField="FeeScheduleFileName" HeaderText="Fee Schedule File Name" Type="String" />
+	<Column DBField="FeeGuidelines" HeaderText="Fee Guidelines" Type="String" />
+	<Column DBField="RapidityFee" HeaderText="Rapidity Fee" Type="String" />
+	<Column DBField="LinkedFees" HeaderText="Linked Fees" Type="String" />
+	<Column DBField="FrequentIssuerFee" HeaderText="Frequent Issuer Fee" Type="String" />
+	<Column DBField="fifExpiryDate" HeaderText="FIF Expiry Date" Type="Date" />
+	<Column DBField="RPMStatus" HeaderText="RPM Status" Type="String" />
+	<Column DBField="ContractDate" HeaderText="Contract Date" Type="Date" />
+	<Column DBField="Region" HeaderText="Region" Type="Integer" />
+	<Column DBField="RegionName" HeaderText="Region Name" Type="String" />
+</Columns>
