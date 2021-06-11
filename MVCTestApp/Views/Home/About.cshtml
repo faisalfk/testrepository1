@@ -25,9 +25,9 @@
     }
 </div>
 
-@ShowList(new string[] { "JAN", "FEB", "MAR" });
+@ShowList(new string[] { "JAN", "FEB", "MAR", "APR" });
 <br />
-@ShowList(new string[] { "SAT", "SUN", "MON" });
+@ShowList(new string[] { "SAT", "SUN", "MON", "TUE" });
 <br />
 @ShowList(new string[] { });
 
@@ -35,7 +35,7 @@
 
 <br />
 @{ 
-    string Name = "faisal fayyaz";
+    string Name = "Faisal Fayyaz";
 }
 
 @Html.TextBox("textBox1", Name, new  { id="txtName", @class="customClass", style="width:200px;"})
