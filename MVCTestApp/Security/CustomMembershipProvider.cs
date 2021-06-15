@@ -111,11 +111,13 @@ namespace MVCTestApp.Security
             
             if(username == "admin")
             {
-                roles = new ApplicationRoles[] { ApplicationRoles.Administrator, ApplicationRoles.User };
+                roles = new ApplicationRoles[] { ApplicationRoles.Administrator, ApplicationRoles.User, ApplicationRoles.Reports };
+                HttpContext.Current.Session["IsAdmin"] = "1";
             }
             else if (username == "user")
             {
                 roles = new ApplicationRoles[] { ApplicationRoles.User };
+                HttpContext.Current.Session["IsAdmin"] = "0";
             }
             else
             {

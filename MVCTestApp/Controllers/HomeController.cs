@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace MVCTestApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Administrator, User")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -55,10 +55,10 @@ namespace MVCTestApp.Controllers
                 _folderPath += _path[i] + "\\";
             }
 
-            _folderPath += "grp_dr\\bin\\ReportXMLSetting";
-            string xmlFile3 = (_folderPath.Trim().EndsWith("\\") ? _folderPath: _folderPath + "\\") + string.Format("DealListReport_ReportType{0}.xml", 1);
+            _folderPath = (_folderPath.Trim().EndsWith("\\") ? _folderPath : _folderPath + "\\") + "grp_dr\\bin\\ReportXMLSetting\\" + string.Format("DealListReport_ReportType{0}.xml", 1);
+
             XmlDocument xdoc2 = new XmlDocument();
-            xdoc2.Load(xmlFile3);
+            xdoc2.Load(_folderPath);
 
             #endregion
 
