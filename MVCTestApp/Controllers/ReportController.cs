@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCTestApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,13 +16,26 @@ namespace MVCTestApp.Controllers
         [HttpGet]
         public ActionResult FetchReport()
         {
-            return View();
+            ReportModel reportModel = new ReportModel();
+            return View(reportModel);
         }
 
         [HttpPost]
-        public ActionResult FetchReport(string reportType)
+        [ValidateAntiForgeryToken]
+        public ActionResult FetchReport(FormCollection reportData)
         {
-            return View();
+            ReportModel reportModel = new ReportModel();
+            reportModel.ReportType = reportData["ReportType"].ToString();
+            reportModel.Country = reportData["Country"].ToString();
+
+            DateTime outDate;
+            DateTime.TryParse(reportData["StartDate"], out outDate);
+            reportModel.StartDate = outDate;
+
+            DateTime.TryParse(reportData["EndDate"], out outDate);
+            reportModel.EndDate = outDate;
+
+            return View(reportModel);
         }
 
     }
