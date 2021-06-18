@@ -33,6 +33,8 @@ namespace MVCTestApp.Models
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 
+        [Required(ErrorMessage = "Required")]
+        public int DownloadType { get; set; }
 
         public IEnumerable<SelectListItem> AllReportTypes
         {

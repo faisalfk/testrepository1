@@ -38,7 +38,17 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" align="right">
+            <td align="right">
+                @Html.LabelFor(x => x.DownloadType, "Download Type") &nbsp;
+            </td>
+            <td colspan="3">
+                @Html.RadioButtonFor(x => x.DownloadType, 1,  new { @checked = true } )  @Html.LabelFor(x => x.DownloadType, "Excel Workbook") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.RadioButtonFor(x => x.DownloadType, 2)  @Html.LabelFor(x => x.DownloadType, "Open XML Document")
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="3" align="left">
                 <input type="submit" value="SHOW REPORT" id="btnShowReport" class="btn btn-primary" />
             </td>
         </tr>
