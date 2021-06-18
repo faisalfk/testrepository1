@@ -1,4 +1,5 @@
 ﻿using Infragistics.Documents.Excel;
+using MVCTestApp.Common;
 using MVCTestApp.Models;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace MVCTestApp.Controllers
             else if (reportData.DownloadType == 2)
             {
                 // Create OPEN XML document
-
+                OpenXML.CreateOpenXMLExcelSheet();
             }
 
             return View(reportData);
