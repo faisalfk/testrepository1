@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,6 +41,51 @@ namespace MVCTestApp.Models
                 return this.ReportTypes;
             }
         }
+
+        public IEnumerable<SelectListItem> CountriesList
+        {
+            get
+            {
+                List<string> CountryList = new List<string>();
+                IList<SelectListItem> CountryList2 = new List<SelectListItem>();
+                CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+                foreach (CultureInfo CInfo in CInfoList)
+                {
+                    RegionInfo R = new RegionInfo(CInfo.LCID);
+                    if (!(CountryList.Contains(R.EnglishName)))
+                    {
+                        CountryList.Add(R.EnglishName);
+                    }
+                }
+
+                CountryList.Sort();
+
+                foreach(string str in CountryList)
+                {
+                    CountryList2.Add(new SelectListItem() { Selected = false, Text = str, Value = str });
+                }
+
+                return CountryList2;
+            }
+        }
+
+        //public IEnumerable<SelectListItem> CountriesList
+        //{
+        //    get
+        //    {
+        //        IList<SelectListItem> CountryList = new List<SelectListItem>();
+        //        CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+        //        foreach (CultureInfo CInfo in CInfoList)
+        //        {
+        //            RegionInfo R = new RegionInfo(CInfo.LCID);
+        //            if (!CountryList.Contains(new SelectListItem() { Selected = false, Text = R.EnglishName, Value = R.Name }))
+        //            {
+        //                CountryList.Add(new SelectListItem() { Selected = false, Text = R.EnglishName, Value = R.Name });
+        //            }
+        //        }
+        //        return CountryList;
+        //    }
+        //}
 
         #endregion
 

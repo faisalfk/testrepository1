@@ -22,20 +22,25 @@ namespace MVCTestApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FetchReport(FormCollection reportData)
+        public ActionResult FetchReport(ReportModel reportData)
         {
-            ReportModel reportModel = new ReportModel();
-            reportModel.ReportType = reportData["ReportType"].ToString();
-            reportModel.Country = reportData["Country"].ToString();
+            #region Reading data from form collection
 
-            DateTime outDate;
-            DateTime.TryParse(reportData["StartDate"], out outDate);
-            reportModel.StartDate = outDate;
+            //ReportModel reportModel = new ReportModel();
+            //reportModel.ReportType = reportData["ReportType"].ToString();
+            //reportModel.Country = reportData["Country"].ToString();
 
-            DateTime.TryParse(reportData["EndDate"], out outDate);
-            reportModel.EndDate = outDate;
+            //DateTime outDate;
+            //DateTime.TryParse(reportData["StartDate"], out outDate);
+            //reportModel.StartDate = outDate;
 
-            return View(reportModel);
+            //DateTime.TryParse(reportData["EndDate"], out outDate);
+            //reportModel.EndDate = outDate;
+
+            #endregion
+
+
+            return View(reportData);
         }
 
     }
