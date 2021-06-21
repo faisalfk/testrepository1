@@ -3,8 +3,10 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+
 
 namespace MVCTestApp.Common
 {
@@ -57,5 +59,52 @@ namespace MVCTestApp.Common
             // Close the document.
             spreadsheetDocument.Close();
         }
+
+        public static void CreateOpenXMLExcelSheet2()
+        {
+            string filePath = @"C:\Temp\OpenXMLWorkbook2.xlsx";
+            SpreadsheetDocument ssdoc = SpreadsheetDocument.Create(filePath, SpreadsheetDocumentType.Workbook);
+
+            WorkbookPart wbp = ssdoc.AddWorkbookPart();
+            wbp.Workbook = new Workbook();
+
+            WorksheetPart wsp = wbp.AddNewPart<WorksheetPart>();
+            wsp.Worksheet = new Worksheet(new SheetData());
+
+            Sheets sheets = ssdoc.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());
+
+            Sheet sheet = new Sheet()
+            {
+                Id = ssdoc.WorkbookPart.GetIdOfPart(wsp),
+                SheetId = 1,
+                Name = "Sample Data"
+            };
+
+            sheets.Append(sheet);
+
+            Worksheet ws = wsp.Worksheet;
+            SheetData sheetData = ws.GetFirstChild<SheetData>();
+
+            for(int i = 0;  i< 100; i++)
+            {
+                Row r = new Row();
+
+                for (int c=0; c < 10; c++)
+                {
+                    Cell cl = new Cell()
+                    {
+                        CellValue = new CellValue(c.ToString()),
+                        DataType = CellValues.String
+                    };
+
+                    r.Append(cl);
+                }
+                sheetData.Append(r);
+            }
+
+            wsp.Worksheet.Save();
+            ssdoc.Close();            
+        }
+    
     }
 }

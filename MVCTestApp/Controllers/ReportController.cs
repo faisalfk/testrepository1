@@ -80,7 +80,9 @@ namespace MVCTestApp.Controllers
             else if (reportData.DownloadType == 2)
             {
                 // Create OPEN XML document
-                OpenXML.CreateOpenXMLExcelSheet();
+
+                // OpenXML.CreateOpenXMLExcelSheet();
+                OpenXML.CreateOpenXMLExcelSheet2();
             }
 
             return View(reportData);
