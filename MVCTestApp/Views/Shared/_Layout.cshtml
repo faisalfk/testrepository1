@@ -23,6 +23,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Chat", "Chat", "Home")</li>
                     @if (Session["IsAdmin"] != null && Session["IsAdmin"].ToString() == "1")
                     {
                         <li>@Html.ActionLink("Report ", "FetchReport", "Report")</li>
