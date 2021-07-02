@@ -36,29 +36,31 @@ namespace MVCTestApp.Controllers
             #region  Load from relative parent directory
 
             string _appRoot = HttpContext.Server.MapPath("~");
-            //DirectoryInfo _parent = Directory.GetParent(_appRoot);
-            //string _parentPath = _parent.FullName;
+            DirectoryInfo _parent = Directory.GetParent(_appRoot);
+            string _parentPath = _parent.FullName;
 
-            string[] _path = _appRoot.Split(new char[] { '\\' });
-            int _count = 1;
-            string _elm = _path[_path.Length - _count];
-            while(_elm == "")
-            {
-                _count++;
-                if (_count < _path.Length)
-                { _elm = _path[_path.Length - _count]; }
-            }
 
-            string _folderPath = "";
-            for (int i =0; i < (_path.Length - _count); i++)
-            {
-                _folderPath += _path[i] + "\\";
-            }
 
-            _folderPath = (_folderPath.Trim().EndsWith("\\") ? _folderPath : _folderPath + "\\") + "grp_dr\\bin\\ReportXMLSetting\\" + string.Format("DealListReport_ReportType{0}.xml", 1);
+            //string[] _path = _appRoot.Split(new char[] { '\\' });
+            //int _count = 1;
+            //string _elm = _path[_path.Length - _count];
+            //while(_elm == "")
+            //{
+            //    _count++;
+            //    if (_count < _path.Length)
+            //    { _elm = _path[_path.Length - _count]; }
+            //}
 
-            XmlDocument xdoc2 = new XmlDocument();
-            xdoc2.Load(_folderPath);
+            //string _folderPath = "";
+            //for (int i =0; i < (_path.Length - _count); i++)
+            //{
+            //    _folderPath += _path[i] + "\\";
+            //}
+
+            //_folderPath = (_folderPath.Trim().EndsWith("\\") ? _folderPath : _folderPath + "\\") + "grp_dr\\bin\\ReportXMLSetting\\" + string.Format("DealListReport_ReportType{0}.xml", 1);
+
+            //XmlDocument xdoc2 = new XmlDocument();
+            //xdoc2.Load(_folderPath);
 
             #endregion
 
