@@ -16,6 +16,8 @@ pipeline {
 		project_path="${solution_path}\\MVCTestApp"
         project_publish_folder="${project_path}\\bin\\publish"
 		build_properties_file="${solution_path}\\Jenkins.properties"
+		MSBUILD = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\MSBuild\\Current\\Bin\\MSBuild.exe"
+		MSDEPLOY = "C:\\Program Files\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe"
     }
 
 	stages{
@@ -23,41 +25,37 @@ pipeline {
 			steps {
 				script {
 					echo "Loading build properties"
-				}
-			}
-		}
-		stage('Prepare') {
-			steps {
-				script {
-					echo "Preparing build properties"
-					echo it
+                    def build_properties = readFile(file: "${build_properties_file}")
+
 				}
 			}
 		}
 		stage('Cleanup Previous Build') {
 			steps {
-				dir(web_project_publish_folder) {
-					deleteDir()
-				}
-				dir(service_project_publish_folder) {
+				dir(project_publish_folder) {
 					deleteDir()
 				}
 			}
 		}
 		stage('Build') {
 			steps {
-				dir(web_project_path) {
+				dir(project_path) {
 					script {
-						echo "Deploying Web Project"
-					}
-				}
-				dir(service_project_path) {
-					script {
-					echo "Deploying Service"
+                        echo "Build"
+                        bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
 					}
 				}
 			}
 		}
-
+		stage('Deploy') {
+			steps {
+				dir(project_path) {
+					script {
+                        echo "Deploy"
+                        bat "\"${MSDEPLOY}\" -verb:sync -source:contentPath=C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\obj\\Debug\\Package\\PackageTmp -dest:contentPath=C:\\inetpub\\wwwroot\\MVCTestApp"
+					}
+				}
+			}
+		}
 }
 }
