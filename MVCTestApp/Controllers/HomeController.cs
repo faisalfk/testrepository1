@@ -21,6 +21,10 @@ namespace MVCTestApp.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+            string userName = Environment.GetEnvironmentVariable("MVCTestApp:AuthUser", EnvironmentVariableTarget.Machine);
+
+            string userPassword = Environment.GetEnvironmentVariable("MVCTestApp:AuthPassword", EnvironmentVariableTarget.Machine);
+
             return View();
         }
 
