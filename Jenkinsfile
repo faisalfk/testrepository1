@@ -23,9 +23,10 @@ pipeline {
 	stages{
 		stage('Load Build Properties') {
 			steps {
+				script {
 				echo "Branch Name is"
 				echo BRANCH_NAME
-
+				}
 				}
 			}
 		}
