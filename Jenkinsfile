@@ -24,38 +24,13 @@ pipeline {
 		stage('Load Build Properties') {
 			steps {
 				script {
-					echo "Loading build properties"
-                    def build_properties = readFile(file: "${build_properties_file}")
+				echo "Branch Name is"
+				echo BRANCH_NAME
+				}
+				}
+			}
+		}
 
-				}
-			}
-		}
-		stage('Cleanup Previous Build') {
-			steps {
-				dir(project_publish_folder) {
-					deleteDir()
-				}
-			}
-		}
-		stage('Build') {
-			steps {
-				dir(project_path) {
-					script {
-                        echo "Build"
-                        bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
-					}
-				}
-			}
-		}
-		stage('Deploy') {
-			steps {
-				dir(project_path) {
-					script {
-                        echo "Deploy"
-                        bat "\"${MSDEPLOY}\" -verb:sync -source:contentPath=C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\obj\\Debug\\Package\\PackageTmp -dest:contentPath=C:\\inetpub\\wwwroot\\MVCTestApp"
-					}
-				}
-			}
-		}
+
 }
 }
