@@ -25,7 +25,8 @@ namespace MVCTestApp.Controllers
 
             string userPassword = Environment.GetEnvironmentVariable("MVCTestApp:AuthPassword", EnvironmentVariableTarget.Machine);
 
-            string unP = userName + userPassword;
+            // combine username and password
+            string unP = userName + userPassword + "changed";
 
             return View();
         }
