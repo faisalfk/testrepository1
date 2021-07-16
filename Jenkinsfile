@@ -25,7 +25,6 @@ pipeline {
 		stage('Load Build Properties') {
 			steps {
 				script {
-					echo "Loading build properties"
                     def build_properties = readFile(file: "${build_properties_file}")
                     
 					properties([
