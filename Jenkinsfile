@@ -26,7 +26,7 @@ pipeline {
 			steps {
 				script {
 				echo "Branch Name is ${env.BRANCH_NAME}"
-
+				echo BRANCH_NAME
 				}
 				}
 			}
