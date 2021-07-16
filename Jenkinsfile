@@ -38,8 +38,7 @@ pipeline {
 			steps {
 				script {
 					branches_array = branches.split(':')
-					def branchName = getCurrentBranch()
-					indexofEnv = branches_array.findIndexOf { it == branchName.trim().toLowerCase() }
+					indexofEnv = branches_array.findIndexOf { it == BRANCH_NAME.trim().toLowerCase() }
 					echo "Branch Index: ${indexofEnv}"
 					
 					environments_array = environments.split(':')
@@ -57,9 +56,3 @@ pipeline {
 		
 }
 
-def getCurrentBranch () {
-    return sh (
-        script: 'git rev-parse --abbrev-ref HEAD',
-        returnStdout: true
-    ).trim()
-}
