@@ -25,7 +25,7 @@ pipeline {
 		stage('Load Build Properties') {
 			steps {
 				script {
-				echo "Branch Name is ${env.BRANCH_NAME}"
+				echo "Branch Name is ${BRANCH_NAME}"
 
 				}
 				}
