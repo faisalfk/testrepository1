@@ -1,2 +1,2 @@
 # testrepository1
-TO test git functionality
+To test git functionality
