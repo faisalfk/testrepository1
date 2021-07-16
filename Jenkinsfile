@@ -25,11 +25,18 @@ pipeline {
 		stage('Load Build Properties') {
 			steps {
 				script {
-				echo "Branch Name is ${BRANCH_NAME}"
-
-				}
+					echo "Loading build properties"
+                    def build_properties = readFile(file: "${build_properties_file}")
+                    
+					properties([
+						[$class: 'EnvInjectJobProperty', info: [loadFilesFromMaster: false, propertiesContent: "${build_properties}"], keepBuildVariables: true, keepJenkinsSystemVariables: true, on: true]
+					])
+					
 				}
 			}
+		}
+
+
 		}
 		
 }
