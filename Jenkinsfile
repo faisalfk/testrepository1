@@ -35,6 +35,22 @@ pipeline {
 				}
 			}
 		}
+		stage('Prepare') {
+			steps {
+				script {
+					branches_array = branches.split(':')
+					indexofEnv = branches_array.findIndexOf { it == BRANCH_NAME.trim().toLowerCase() }
+					echo "Branch Index: ${indexofEnv}"
+					
+					environments_array = environments.split(':')
+					echo "Environment: ${environments_array[indexofEnv]}"
+					servers_array = servers.split(':') 
+					db_credentialid_array = db_credentialid.split(':')
+					notification_emails_array = notification_emails.split(':')
+					target_servers = servers_array[indexofEnv].split(',')
+				}
+			}
+		}
 
 
 		}
