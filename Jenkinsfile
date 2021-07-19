@@ -63,7 +63,12 @@ pipeline {
 				dir(project_path) {
 					script {
                         			echo "Building ${project_path}"
-                        			bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+                        			
+						/*
+							bat "\"${MSBUILD}\" /t:package ${project_path}\\MVCTestApp.csproj"
+						*/
+
+						bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
 					}
 				}
 			}
@@ -72,7 +77,16 @@ pipeline {
 			steps {
 				dir(project_path) {
 					script {
-                        			bat "\"${MSDEPLOY}\" -verb:sync -source:contentPath=C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\obj\\Debug\\Package\\PackageTmp -dest:contentPath=C:\\inetpub\\wwwroot\\MVCTestApp"
+						/*
+						
+                        				bat "\"${MSDEPLOY}\" -verb:sync -source:contentPath=${project_path}\\obj\\Debug\\Package\\MVCTestApp.zip -dest:contentPath=${deployment_folders[indexofEnv]}"
+						*/
+						
+						for(server in target_servers) {
+							
+							echo "Server is ${server}"
+						}
+						
 					}
 				}
 			}
