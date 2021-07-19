@@ -5,6 +5,7 @@ import groovy.transform.Field
 @Field def branches_array
 @Field def environments_array
 @Field def servers_array
+@Field def deployment_folders
 @Field def db_credentialid_array
 @Field def notification_emails_array
 @Field def target_servers
@@ -43,13 +44,21 @@ pipeline {
 					
 					environments_array = environments.split(':')
 					echo "Environment: ${environments_array[indexofEnv]}"
+
 					servers_array = servers.split(':') 
+					deployment_folders = deployment_folder.split(':') 
 					db_credentialid_array = db_credentialid.split(':')
 					notification_emails_array = notification_emails.split(':')
+
 					target_servers = servers_array[indexofEnv].split(',')
+					
+					echo "Target Server: ${target_servers}"
+					echo "Deployment Folder: ${deployment_folders[indexofEnv]}"
+					echo "DB Credential ID: ${db_credentialid_array[indexofEnv]}"
 				}
 			}
 		}
+
 
 
 		}
