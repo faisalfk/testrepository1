@@ -58,7 +58,16 @@ pipeline {
 				}
 			}
 		}
-
+		stage('Build') {
+			steps {
+				dir(project_path) {
+					script {
+                        			echo "Building ${project_path}"
+                        			bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+					}
+				}
+			}
+		}
 
 
 		}
