@@ -18,7 +18,7 @@ begin {
     $WebsiteName = $env:website_name
 }
 process {
-	Write-Host "Deploying Web Project to $DestinationComputerName @ $TargetFolder"
+	Write-Host "Deploying Web Project to $DestinationComputerName @ $TargetFolder FROM $SourceFolder"
 }
 end {
 
