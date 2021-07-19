@@ -68,7 +68,7 @@ pipeline {
 							bat "\"${MSBUILD}\" /t:package ${project_path}\\MVCTestApp.csproj"
 						*/
 
-						bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+						bat "\"${MSBUILD}\" /t:package /p:Configuration=Release C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
 					}
 				}
 			}
