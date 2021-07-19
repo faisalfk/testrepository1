@@ -84,7 +84,14 @@ pipeline {
 						
 						for(server in target_servers) {
 							
-							echo "Server is ${server}"
+							echo "Target Server is ${server}"
+							def status = powershell(returnStatus: true, script: ".\\MVCTestApp\\Deploy-AsWebsite.ps1 -SourceFolder '${project_path}\\obj\\Release\\Package\\PackageTmp\\' -DestinationComputerName ${server} -TargetFolder '${deployment_folders[indexofEnv]}\\'")
+
+						echo "Return Status: ${status}"
+						if(status != 0) {
+							throw new Exception("Failed to copy pusblished web project to destination server: ${server}")
+						}
+
 						}
 						
 					}
