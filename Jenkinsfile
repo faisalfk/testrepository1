@@ -15,7 +15,7 @@ pipeline {
 	environment {
 		solution_path="${WORKSPACE}"
 		project_path="${solution_path}\\MVCTestApp"
-        project_publish_folder="${project_path}\\bin\\publish"
+        	project_publish_folder="${project_path}\\bin\\publish"
 		build_properties_file="${solution_path}\\Jenkins.properties"
 		MSBUILD = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\MSBuild\\Current\\Bin\\MSBuild.exe"
 		MSDEPLOY = "C:\\Program Files\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe"
@@ -68,7 +68,15 @@ pipeline {
 				}
 			}
 		}
-
+		stage('Deploy') {
+			steps {
+				dir(project_path) {
+					script {
+                        			bat "\"${MSDEPLOY}\" -verb:sync -source:contentPath=C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\obj\\Debug\\Package\\PackageTmp -dest:contentPath=C:\\inetpub\\wwwroot\\MVCTestApp"
+					}
+				}
+			}
+		}
 
 		}
 		
