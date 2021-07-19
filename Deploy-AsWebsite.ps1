@@ -6,7 +6,6 @@ Deploys web project for ActimizeScreening Solution
 param (
     [Parameter(Mandatory=$true)]
     [string]
-    [ValidateScript({ Test-Path -Path $_ -PathType Container })]
     $SourceFolder,
     [Parameter(Mandatory=$true)]
     [string]
