@@ -86,7 +86,7 @@ pipeline {
 							
 							echo "Target Server is ${server}"
 							echo "Current Project Directory ${project_path}"
-							def status = powershell(returnStatus: true, script: ".\\Deploy-AsWebsite.ps1 -SourceFolder '${project_path}\\obj\\Release\\Package\\PackageTmp\\' -DestinationComputerName ${server} -TargetFolder '${deployment_folders[indexofEnv]}\\'")
+							def status = powershell(returnStatus: true, script: "${solution_path}\\Deploy-AsWebsite.ps1 -SourceFolder '${project_path}\\obj\\Release\\Package\\PackageTmp\\' -DestinationComputerName ${server} -TargetFolder '${deployment_folders[indexofEnv]}\\'")
 
 						echo "Return Status: ${status}"
 						if(status != 0) {
