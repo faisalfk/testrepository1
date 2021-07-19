@@ -68,7 +68,7 @@ pipeline {
 							bat "\"${MSBUILD}\" /t:package ${project_path}\\MVCTestApp.csproj"
 						*/
 
-						bat "\"${MSBUILD}\" /t:package C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+						bat "\"${MSBUILD}\" /t:package /p:Configuration=Release C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
 					}
 				}
 			}
@@ -84,7 +84,15 @@ pipeline {
 						
 						for(server in target_servers) {
 							
-							echo "Server is ${server}"
+							echo "Target Server is ${server}"
+							echo "Current Project Directory ${project_path}"
+							def status = powershell(returnStatus: true, script: "${solution_path}\\Deploy-AsWebsite.ps1 -SourceFolder '${project_path}\\obj\\Release\\Package\\PackageTmp\\' -DestinationComputerName ${server} -TargetFolder '${deployment_folders[indexofEnv]}\\'")
+
+						echo "Return Status: ${status}"
+						if(status != 0) {
+							throw new Exception("Failed to copy pusblished web project to destination server: ${server}")
+						}
+
 						}
 						
 					}
