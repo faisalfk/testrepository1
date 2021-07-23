@@ -85,7 +85,7 @@ pipeline {
 						for(server in target_servers) {
 							
 							echo "Target Server is ${server}"
-							echo "Current Project Directory ${project_path}"
+
 							def status = powershell(returnStatus: true, script: "${solution_path}\\Deploy-AsWebsite.ps1 -SourceFolder '${project_path}\\obj\\Release\\Package\\PackageTmp\\' -DestinationComputerName ${server} -TargetFolder '${deployment_folders[indexofEnv]}\\'")
 
 						echo "Return Status: ${status}"
