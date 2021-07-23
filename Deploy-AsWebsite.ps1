@@ -44,6 +44,29 @@ process {
 		}
     }
 
+    	Write-Host "Copying new code from: $SourceFolder to $TargetFolder on $DestinationComputerName"
+    	Set-Location -Path $SourceFolder
+
+ 	$session = New-PSSession -ComputerName $DestinationComputerName
+
+    	Copy-Item .\* -Destination $TargetFolder -ToSession $session -Recurse -Force -Container
+
+
+    If($website) {
+        Write-Host "Start Website on $DestinationComputerName Website: $WebsiteName"
+        Invoke-Command -ComputerName $DestinationComputerName -ScriptBlock { 
+            $using:website | Start-Website
+        }
+        $appPoolState = Invoke-Command -ComputerName $DestinationComputerName -ScriptBlock { 
+            $using:website | Get-WebAppPoolState
+        }
+        if($appPoolState.Value -ne "Started") {
+            Write-Host "Starting Website Application Pool $DestinationComputerName Website: $WebsiteName"
+            Invoke-Command -ComputerName $DestinationComputerName -ScriptBlock { 
+                 $using:website | Start-WebAppPool
+            }
+        }
+    }
 
 
 }
