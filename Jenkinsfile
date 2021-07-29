@@ -47,7 +47,7 @@ pipeline {
 
 					servers_array = servers.split('\\*') 
 					deployment_folders = deployment_folder.split('\\*') 
-					db_credentialid_array = db_credentialid.split('\\*')
+					db_credentialid_array = grp_db_credentialid.split('\\*')
 					notification_emails_array = notification_emails.split('\\*')
 
 					target_servers = servers_array[indexofEnv].split(',')
