@@ -68,7 +68,7 @@ pipeline {
 				script {
 					for(server in target_servers){
 						def status = powershell(returnStatus: true, script: """Invoke-Command -ComputerName ${server} -ScriptBlock { 
-							[Environment]::SetEnvironmentVariable('GRPConnection', ${GRP_DB_AUTH}, 'Machine'); 
+							[Environment]::SetEnvironmentVariable('GRPConnection', '${GRP_DB_AUTH}', 'Machine'); 
 						}""")
 						echo "Return Status: ${status}"
 						if(status != 0) {
@@ -84,12 +84,12 @@ pipeline {
 					script {
                         			echo "Building ${project_path}"
                         			
-						
-							bat "\"${MSBUILD}\" /t:package /p:Configuration=Release ${project_path}\\MVCTestApp.csproj"
-
 						/*
-						bat "\"${MSBUILD}\" /t:package /p:Configuration=Release C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+							bat "\"${MSBUILD}\" /t:package /p:Configuration=Release ${project_path}\\MVCTestApp.csproj"
 						*/
+						
+						bat "\"${MSBUILD}\" /t:package /p:Configuration=Release C:\\temp\\TestProjects\\MVC\\testrepository1\\MVCTestApp\\MVCTestApp.csproj"
+						
 					}
 				}
 			}
