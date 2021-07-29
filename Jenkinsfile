@@ -67,9 +67,9 @@ pipeline {
 			steps {
 				script {
 					for(server in target_servers){
-						def status = powershell(returnStatus: true, script: 'Invoke-Command -ComputerName ${server} -ScriptBlock { 
-							[Environment]::SetEnvironmentVariable("GRPConnection", "${GRP_DB_AUTH}", "Machine"); 
-						}')
+						def status = powershell(returnStatus: true, script: """Invoke-Command -ComputerName ${server} -ScriptBlock { 
+							[Environment]::SetEnvironmentVariable('GRPConnection', ${GRP_DB_AUTH}, 'Machine'); 
+						}""")
 						echo "Return Status: ${status}"
 						if(status != 0) {
 							throw new Exception("Failed to Set Environment Variables on the destination server: ${server}")
