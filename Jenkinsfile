@@ -55,6 +55,26 @@ pipeline {
 					echo "Target Server: ${target_servers}"
 					echo "Deployment Folder: ${deployment_folders[indexofEnv]}"
 					echo "DB Credential ID: ${db_credentialid_array[indexofEnv]}"
+
+					
+				}
+			}
+		}
+		stage('Set Environment Variables') {
+			environment {
+				GRP_DB_AUTH = credentials("${db_credentialid_array[indexofEnv]}")
+			}
+			steps {
+				script {
+					for(server in target_servers){
+						def status = powershell(returnStatus: true, script: """Invoke-Command -ComputerName ${server} -ScriptBlock { 
+							[Environment]::SetEnvironmentVariable('GRPConnection', '${GRP_DB_AUTH}', 'Machine'); 
+						}""")
+						echo "Return Status: ${status}"
+						if(status != 0) {
+							throw new Exception("Failed to Set Environment Variables on the destination server: ${server}")
+						}
+					}
 				}
 			}
 		}
